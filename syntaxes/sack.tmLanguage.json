@@ -22,9 +22,6 @@
 		},
 		{
 			"include": "#ident"
-		},
-		{
-			"include": "#operators"
 		}
 	],
 	"repository": {
@@ -141,22 +138,6 @@
 				{
 					"name": "variable.other.readwrite.sack",
 					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
-				}
-			]
-		},
-		"operators": {
-			"patterns": [
-				{
-					"name": "keyword.operator.arithmetic.sack",
-					"match": "\\+|-|\\*|/|%|\\^"
-				},
-				{
-					"name": "keyword.operator.assignment.sack",
-					"match": "="
-				},
-				{
-					"name": "keyword.operator.comparison.sack",
-					"match": "==|!=|<|>|<=|>=|&&||||!"
 				}
 			]
 		}

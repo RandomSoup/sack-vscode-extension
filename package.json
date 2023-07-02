@@ -3,6 +3,10 @@
   "displayName": "Sack Language Features",
   "description": "Syntax highlighting for the Sack programming language",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "github.com/randomsoup/sack-vscode-extension"
+  },
   "engines": {
     "vscode": "^1.79.0"
   },
