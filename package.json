@@ -1,0 +1,25 @@
+{
+  "name": "sack-language-features",
+  "displayName": "Sack Language Features",
+  "description": "Syntax highlighting for the Sack programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "sack",
+      "aliases": ["Sack", "sack"],
+      "extensions": [".sk",".sack"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "sack",
+      "scopeName": "source.sack",
+      "path": "./syntaxes/sack.tmLanguage.json"
+    }]
+  }
+}

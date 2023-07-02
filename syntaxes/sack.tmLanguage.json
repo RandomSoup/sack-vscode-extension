@@ -1,0 +1,165 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Sack",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#digits"
+		},
+		{
+			"include": "#statements"
+		},
+		{
+			"include": "#callables"
+		},
+		{
+			"include": "#ident"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.sack",
+					"match": "\\b(if|else|loop|in|while|return)\\b"
+				},
+				{
+					"name": "constant.language.null.sack",
+					"match": "\\b(none)\\b"
+				},
+				{
+					"name": "constant.language.boolean.sack",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "support.function.builtin.sack",
+					"match": "\\b(print|input|type|len|range|int|float|string|args)\\b"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.sack",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.sack",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.sack",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.sack",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.sack",
+					"match": "#.*$"
+				}
+			]
+		},
+		"digits": {
+			"patterns": [
+				{
+					"name": "constant.numeric.number.sack",
+					"match": "\\b[0-9]+\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.sack",
+					"match": "\\b[0-9]+\\.[0-9]+\\b"
+				}
+			]
+		},
+		"statements": {
+			"patterns": [
+				{
+					"match": "\\b(let)\\s+([A-Za-z_][A-Za-z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.sack"
+						},
+						"2": {
+							"name": "variable.other.sack"
+						}
+					}
+				},
+				{
+					"match": "\\b(func|functi)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(([A-Za-z0-9_,\\s]*)\\)",
+					"captures": {
+						"1": {
+							"name":"storage.type.function.sack"
+						},
+						"2": {
+							"name":"entity.name.function.sack"
+						},
+						"3": {
+							"patterns": [
+								{
+									"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
+									"name": "variable.parameter.sack"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		"callables":{
+			"patterns": [
+				{
+					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(",
+					"name": "support.function.sack"
+				}
+			]
+		},
+		"ident": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite.sack",
+					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.sack",
+					"match": "\\+|-|\\*|/|%|\\^"
+				},
+				{
+					"name": "keyword.operator.assignment.sack",
+					"match": "="
+				},
+				{
+					"name": "keyword.operator.comparison.sack",
+					"match": "==|!=|<|>|<=|>=|&&||||!"
+				}
+			]
+		}
+	},
+	"scopeName": "source.sack"
+}
